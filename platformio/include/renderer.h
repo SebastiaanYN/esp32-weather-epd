@@ -25,11 +25,22 @@
 #include "config.h"
 
 #ifdef DISP_BW_V2
+  // #define DISP_WIDTH  800
+  // #define DISP_HEIGHT 480
+  // #include <GxEPD2_BW.h>
+  // extern GxEPD2_BW<GxEPD2_750_T7,
+  //                  GxEPD2_750_T7::HEIGHT> display;
+
   #define DISP_WIDTH  800
   #define DISP_HEIGHT 480
-  #include <GxEPD2_BW.h>
-  extern GxEPD2_BW<GxEPD2_750_T7,
-                   GxEPD2_750_T7::HEIGHT> display;
+  #include <GxEPD2_4G_4G.h>
+  #define GxEPD2_DISPLAY_CLASS GxEPD2_4G_4G
+  #define GxEPD2_DRIVER_CLASS GxEPD2_750_T7
+  #define MAX_DISPLAY_BUFFER_SIZE 65536ul // e.g.
+  #define MAX_HEIGHT(EPD) (EPD::HEIGHT <= MAX_DISPLAY_BUFFER_SIZE / (EPD::WIDTH / 4) ? EPD::HEIGHT : MAX_DISPLAY_BUFFER_SIZE / (EPD::WIDTH / 4))
+
+  extern GxEPD2_DISPLAY_CLASS<GxEPD2_DRIVER_CLASS,
+                              MAX_HEIGHT(GxEPD2_DRIVER_CLASS)> display;
 #endif
 #ifdef DISP_3C_B
   #define DISP_WIDTH  800

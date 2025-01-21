@@ -38,12 +38,27 @@
 #include "icons/icons_196x196.h"
 
 #ifdef DISP_BW_V2
-  GxEPD2_BW<GxEPD2_750_T7,
-            GxEPD2_750_T7::HEIGHT> display(
-    GxEPD2_750_T7(PIN_EPD_CS,
-                  PIN_EPD_DC,
-                  PIN_EPD_RST,
-                  PIN_EPD_BUSY));
+  // GxEPD2_4G_4G<GxEPD2_750_T7,
+  //           GxEPD2_750_T7::HEIGHT> display(
+  //   GxEPD2_750_T7(PIN_EPD_CS,
+  //                 PIN_EPD_DC,
+  //                 PIN_EPD_RST,
+  //                 PIN_EPD_BUSY));
+
+  #define GxEPD2_DISPLAY_CLASS GxEPD2_4G_4G
+  #define GxEPD2_DRIVER_CLASS GxEPD2_750_T7
+  #define MAX_DISPLAY_BUFFER_SIZE 65536ul // e.g
+  #define MAX_HEIGHT(EPD) (EPD::HEIGHT <= MAX_DISPLAY_BUFFER_SIZE / (EPD::WIDTH / 4) ? EPD::HEIGHT : MAX_DISPLAY_BUFFER_SIZE / (EPD::WIDTH / 4))
+
+  GxEPD2_DISPLAY_CLASS<GxEPD2_DRIVER_CLASS,
+      MAX_HEIGHT(GxEPD2_DRIVER_CLASS)> display
+          (GxEPD2_DRIVER_CLASS(PIN_EPD_CS,
+              PIN_EPD_DC,
+              PIN_EPD_RST,
+              PIN_EPD_BUSY));
+
+  #undef MAX_DISPLAY_BUFFER_SIZE
+  #undef MAX_HEIGHT
 #endif
 #ifdef DISP_3C_B
   GxEPD2_3C<GxEPD2_750c_Z08,
