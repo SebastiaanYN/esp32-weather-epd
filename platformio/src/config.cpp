@@ -41,7 +41,7 @@ const uint8_t PIN_EPD_PWR  = 26; // Irrelevant if directly connected to 3.3V
 const uint8_t PIN_BME_SDA = 17;
 const uint8_t PIN_BME_SCL = 16;
 const uint8_t PIN_BME_PWR =  4;   // Irrelevant if directly connected to 3.3V
-const uint8_t BME_ADDRESS = 0x76; // If sensor does not work, try 0x77
+const uint8_t BME_ADDRESS = 0x77; // If sensor does not work, try 0x77
 
 // WIFI
 const char *WIFI_SSID     = "ssid";
@@ -79,15 +79,15 @@ const String OWM_ONECALL_VERSION = "3.0";
 // LOCATION
 // Set your latitude and longitude.
 // (used to get weather data as part of API requests to OpenWeatherMap)
-const String LAT = "40.7128";
-const String LON = "-74.0060";
+const String LAT = "52.3676";
+const String LON = "4.9041";
 // City name that will be shown in the top-right corner of the display.
-const String CITY_STRING = "New York";
+const String CITY_STRING = "Amsterdam";
 
 // TIME
 // For list of time zones see
 // https://github.com/nayarsystems/posix_tz_db/blob/master/zones.csv
-const char *TIMEZONE = "EST5EDT,M3.2.0,M11.1.0";
+const char *TIMEZONE = "CET-1CEST,M3.5.0,M10.5.0/3";
 // Time format used when displaying sunrise/set times. (Max 11 characters)
 // For more information about formatting see
 // https://man7.org/linux/man-pages/man3/strftime.3.html
@@ -106,7 +106,7 @@ const char *DATE_FORMAT = "%a, %B %e"; // ex: Sat, January 1
 // of the screen.
 // For more information about formatting see
 // https://man7.org/linux/man-pages/man3/strftime.3.html
-const char *REFRESH_TIME_FORMAT = "%x %H:%M";
+const char *REFRESH_TIME_FORMAT = "%d/%m/%y %H:%M";
 // NTP_SERVER_1 is the primary time server, while NTP_SERVER_2 is a fallback.
 // pool.ntp.org will find the closest available NTP server to you.
 const char *NTP_SERVER_1 = "pool.ntp.org";
@@ -125,7 +125,7 @@ const int SLEEP_DURATION = 30; // minutes
 // If BED_TIME == WAKE_TIME, then this battery saving feature will be disabled.
 // (range: [0-23])
 const int BED_TIME  = 00; // Last update at 00:00 (midnight) until WAKE_TIME.
-const int WAKE_TIME = 06; // Hour of first update after BED_TIME, 06:00.
+const int WAKE_TIME = 00; // Hour of first update after BED_TIME, 06:00.
 // Note that the minute alignment of SLEEP_DURATION begins at WAKE_TIME even if
 // Bed Time Power Savings is disabled.
 // For example, if WAKE_TIME = 00 (midnight) and SLEEP_DURATION = 120, then the

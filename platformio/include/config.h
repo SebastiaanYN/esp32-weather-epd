@@ -39,8 +39,8 @@
 // The Waveshare rev2.2 is no longer in production.
 // Users of the Waveshare rev2.3 have reported experiencing low contrast issues.
 // Uncomment the macro that identifies your driver board hardware.
-#define DRIVER_DESPI_C02
-// #define DRIVER_WAVESHARE
+// #define DRIVER_DESPI_C02
+#define DRIVER_WAVESHARE
 
 // 3 COLOR E-INK ACCENT COLOR
 // Defines the 3rd color to be used when a 3+ color display is selected.
@@ -76,16 +76,16 @@
 //   Metric   : Celsius
 //   Imperial : Fahrenheit
 // #define UNITS_TEMP_KELVIN
-// #define UNITS_TEMP_CELSIUS
-#define UNITS_TEMP_FAHRENHEIT
+#define UNITS_TEMP_CELSIUS
+// #define UNITS_TEMP_FAHRENHEIT
 
 // UNITS - WIND SPEED
 //   Metric   : Kilometers per Hour
 //   Imperial : Miles per Hour
 // #define UNITS_SPEED_METERSPERSECOND
 // #define UNITS_SPEED_FEETPERSECOND
-// #define UNITS_SPEED_KILOMETERSPERHOUR
-#define UNITS_SPEED_MILESPERHOUR
+#define UNITS_SPEED_KILOMETERSPERHOUR
+// #define UNITS_SPEED_MILESPERHOUR
 // #define UNITS_SPEED_KNOTS
 // #define UNITS_SPEED_BEAUFORT
 
@@ -95,8 +95,8 @@
 // #define UNITS_PRES_HECTOPASCALS
 // #define UNITS_PRES_PASCALS
 // #define UNITS_PRES_MILLIMETERSOFMERCURY
-#define UNITS_PRES_INCHESOFMERCURY
-// #define UNITS_PRES_MILLIBARS
+// #define UNITS_PRES_INCHESOFMERCURY
+#define UNITS_PRES_MILLIBARS
 // #define UNITS_PRES_ATMOSPHERES
 // #define UNITS_PRES_GRAMSPERSQUARECENTIMETER
 // #define UNITS_PRES_POUNDSPERSQUAREINCH
@@ -104,8 +104,8 @@
 // UNITS - VISIBILITY DISTANCE
 //   Metric   : Kilometers
 //   Imperial : Miles
-// #define UNITS_DIST_KILOMETERS
-#define UNITS_DIST_MILES
+#define UNITS_DIST_KILOMETERS
+// #define UNITS_DIST_MILES
 
 // UNITS - PRECIPITATION (HOURLY)
 // Measure of precipitation.
@@ -123,9 +123,9 @@
 //   Metric   : Millimeters
 //   Imperial : Inches
 // #define UNITS_DAILY_PRECIP_POP
-// #define UNITS_DAILY_PRECIP_MILLIMETERS
+#define UNITS_DAILY_PRECIP_MILLIMETERS
 // #define UNITS_DAILY_PRECIP_CENTIMETERS
-#define UNITS_DAILY_PRECIP_INCHES
+// #define UNITS_DAILY_PRECIP_INCHES
 
 // Hypertext Transfer Protocol (HTTP)
 // HTTP
